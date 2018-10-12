@@ -200,7 +200,9 @@
       },
 
       onDrag(drag) {
-        const up = () => {
+        const that = this;
+        const up = (e) => {
+          that.$emit('mouseup', e);
           document.removeEventListener('mousemove', drag);
           document.removeEventListener('mouseup', up);
         };
